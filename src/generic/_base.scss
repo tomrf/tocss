@@ -1,0 +1,20 @@
+@import '../config/base';
+
+html {
+  font-size: $rem-size;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+
+  line-height: $line-height;
+
+  text-rendering: $text-rendering;
+
+  color: $body-color;
+  background-color: $body-background-color;
+
+  min-height: 100vh;
+}

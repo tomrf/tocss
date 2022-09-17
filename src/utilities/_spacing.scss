@@ -1,0 +1,17 @@
+@import '../config/spacing';
+
+@each $t, $type in $types {
+  @each $sizeIndex, $spacingRems in $sizeVariants {
+    @each $d, $directionList in $directions {
+      .u-#{$t}#{$d}-#{$sizeIndex} {
+        @each $direction in $directionList {
+          @if $direction != '' {
+            #{$type}-#{$direction}: $spacingRems !important;
+          } @else {
+            #{$type}: $spacingRems !important;
+          }
+        }
+      }
+    }
+  }
+}

@@ -10,8 +10,9 @@
   },
   "scripts": {
     "build": "yarn run build-expanded && yarn run build-compressed",
-    "build-compressed": "sass --no-source-map --style=compressed --update src/basecss.sass/:dist/basecss.min.css",
-    "build-expanded": "sass --no-source-map --style=expanded --update src/basecss.sass/:dist/basecss.css",
+    "build-compressed": "sass --no-source-map --style=compressed --update src/basecss.scss/:dist/basecss.min.css",
+    "build-expanded": "sass --no-source-map --style=expanded --update src/basecss.scss/:dist/basecss.css",
+    "build-demo": "sass --no-source-map --style=expanded --update src/basecss.scss:demo/basecss.css",
     "watch": "yarn run build --watch",
     "clean": "rm -rf dist/*"
   }
