@@ -1,3 +1,7 @@
+//
+// style for headings h1..h6 / $headingSizes
+//
+
 @import '../config/typography';
 
 @each $heading, $size in $headingSizes {

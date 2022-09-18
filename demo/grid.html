@@ -7,94 +7,88 @@
     <title>Demo: Grid</title>
     <link rel="stylesheet" href="basecss.css">
     <style>
-        body > div {
-            margin-bottom: 30px;
-            color: #00000090;
-            font-size: 14px;
-            font-family: monospace;
+        * {
             text-align: center;
         }
-        h1 {
-            margin-top: 15px;
-            margin-bottom: 7px;
-            font-size: 15px;
-            padding-left: 10px;
+        h6 {
+            margin-top: 3rem;
         }
-        div {
+        .o-grid {
+            outline: 1px solid #00000090;
+            text-align: center;
+        }
+        .o-grid > div {
+            outline: 1px solid red;
+        }
+        .o-grid, .o-grid > div {
             border-radius: 5px;
             padding: 10px;
-        }
-        h1 > code {
-            padding-left: 30px;
+            font-size: 13px;
         }
     </style>
 </head>
 <body>
-    <h1>basic columns, full row<code>.o-grid > .o-grid-col-{1,2,3,c6}</code></h1>
-    <div class="o-grid o-grid--debug">
-        <div class="o-grid-col-1">
-            .o-grid-col-1
+    <div class="o-grid">
+        <div class="o-grid-col-mobile-12 o-grid-col-tablet-6 o-grid-col-desktop-3">
+            .o-grid-col-mobile-12 o-grid-col-tablet-6 o-grid-col-desktop-3
         </div>
-        <div class="o-grid-col-2">
-            .o-grid-col-2
+        <div class="o-grid-col-mobile-12 o-grid-col-tablet-6 o-grid-col-desktop-3">
+            .o-grid-col-mobile-12 o-grid-col-tablet-6 o-grid-col-desktop-3
         </div>
-        <div class="o-grid-col-3">
-            .o-grid-col-3
+        <div class="o-grid-col-mobile-12 o-grid-col-tablet-6 o-grid-col-desktop-3">
+            .o-grid-col-mobile-12 o-grid-col-tablet-6 o-grid-col-desktop-3
         </div>
-        <div class="o-grid-col-6">
-            .o-grid-col-6
-        </div>
-    </div>
-
-    <h1>full row, 12 x 1<code>.o-grid > .o-grid-col-1 * 12</code></h1>
-    <div class="o-grid o-grid--debug">
-        <div class="o-grid-col-1">
-            .o-grid-col-1
-        </div>
-        <div class="o-grid-col-1">
-            .o-grid-col-1
-        </div>
-        <div class="o-grid-col-1">
-            .o-grid-col-1
-        </div>
-        <div class="o-grid-col-1">
-            .o-grid-col-1
-        </div>
-        <div class="o-grid-col-1">
-            .o-grid-col-1
-        </div>
-        <div class="o-grid-col-1">
-            .o-grid-col-1
-        </div>
-        <div class="o-grid-col-1">
-            .o-grid-col-1
-        </div>
-        <div class="o-grid-col-1">
-            .o-grid-col-1
-        </div>
-        <div class="o-grid-col-1">
-            .o-grid-col-1
-        </div>
-        <div class="o-grid-col-1">
-            .o-grid-col-1
-        </div>
-        <div class="o-grid-col-1">
-            .o-grid-col-1
-        </div>
-        <div class="o-grid-col-1">
-            .o-grid-col-1
+        <div class="o-grid-col-mobile-12 o-grid-col-tablet-6 o-grid-col-desktop-3">
+            .o-grid-col-mobile-12 o-grid-col-tablet-6 o-grid-col-desktop-3
         </div>
     </div>
 
-    <h1>full row, 1 x 12<code>.o-grid > .o-grid-col-12</code></h1>
-    <div class="o-grid o-grid--debug">
+    <div class="o-grid">
+        <div class="o-grid-col-1">
+            .o-grid-col-1
+        </div>
+        <div class="o-grid-col-1">
+            .o-grid-col-1
+        </div>
+        <div class="o-grid-col-1">
+            .o-grid-col-1
+        </div>
+        <div class="o-grid-col-1">
+            .o-grid-col-1
+        </div>
+        <div class="o-grid-col-1">
+            .o-grid-col-1
+        </div>
+        <div class="o-grid-col-1">
+            .o-grid-col-1
+        </div>
+        <div class="o-grid-col-1">
+            .o-grid-col-1
+        </div>
+        <div class="o-grid-col-1">
+            .o-grid-col-1
+        </div>
+        <div class="o-grid-col-1">
+            .o-grid-col-1
+        </div>
+        <div class="o-grid-col-1">
+            .o-grid-col-1
+        </div>
+        <div class="o-grid-col-1">
+            .o-grid-col-1
+        </div>
+        <div class="o-grid-col-1">
+            .o-grid-col-1
+        </div>
+    </div>
+
+    <div class="o-grid">
         <div class="o-grid-col-12">
             .o-grid-col-12
         </div>
     </div>
 
-    <h1>o-grid-col-grow, o-grid-col-shrink</h1>
-    <div class="o-grid o-grid--debug">
+    <div class="o-grid">
         <div class="o-grid-col-grow">
             .o-grid-col-grow
         </div>
@@ -106,16 +100,15 @@
         </div>
     </div>
 
-    <h1>nested grid</h1>
-    <div class="o-grid o-grid--debug">
+    <div class="o-grid">
         <div class="o-grid-col-8">
             <span style="line-height: 30px;" >.o-grid-col-8</span>
-            <div class="o-grid o-grid--debug">
+            <div class="o-grid">
                 <div class="o-grid-col-12">
                     .o-grid-col-12
                 </div>
             </div>
-            <div class="o-grid o-grid--debug">
+            <div class="o-grid">
                 <div class="o-grid-col-6">
                     .o-grid-col-6
                 </div>
@@ -129,8 +122,7 @@
         </div>
     </div>
 
-    <h1>offset</h1>
-    <div class="o-grid o-grid--debug">
+    <div class="o-grid">
         <div class="o-grid-col-6 o-grid-col--offset-3">
             .o-grid-col-6.o-grid-col--offset-3
         </div>
@@ -139,8 +131,7 @@
         </div>
     </div>
 
-    <h1>order</h1>
-    <div class="o-grid o-grid--debug">
+    <div class="o-grid">
         <div class="o-grid-col-4 o-grid-col--order-12 o-grid-col--offset-2">
             .o-grid-col-4.o-grid-col--order-12.o-grid-col--offset-2 (1)
         </div>
@@ -155,9 +146,8 @@
         </div>
     </div>
 
-    <h1>overflow / stacking</h1>
     <div>
-        <div class="o-grid o-grid--debug">
+        <div class="o-grid">
             <div class="o-grid-col-10">
                 .o-grid-col-10
             </div>

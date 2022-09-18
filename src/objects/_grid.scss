@@ -1,22 +1,14 @@
+//
+// flexbox based "bootstrap-like" grid system with rows and cols
+//
+
 @import '../config/grid';
+@import '../config/breakpoints';
 
 // grid container / "row"
 .o-grid {
   display: flex;
   flex-wrap: wrap;
-
-  &--debug {
-    outline: 1px solid rgba(20, 20, 20, 0.60);
-
-    >* {
-      outline: 1px dashed rgba(0, 0, 255, 0.85);
-    }
-
-    >*:nth-child(2n) {
-      outline: 1px dashed rgba(255, 0, 0, 0.85);
-    }
-
-  }
 }
 
 // dynamic grid columns
@@ -32,7 +24,8 @@
 // o-grid-col-[1..$grid-columns], + --offset-N, --order-N
 @for $i from 1 through $grid-columns {
   .o-grid-col-#{$i} {
-    flex: 0 0 percentage(math.div($i, $grid-columns));
+    display: flex;
+    flex: 1 1 percentage(math.div($i, $grid-columns));
     max-width: percentage(math.div($i, $grid-columns));
   }
 }
@@ -48,3 +41,34 @@
     order: $i;
   }
 }
+
+// o-grid-col-[breakpoint]-[1..$grid-columns], + --offset-N, --order-N
+@each $breakpoint, $breakpoint-value in $breakpoints {
+  @for $i from 1 through $grid-columns {
+    .o-grid-col-#{$breakpoint}-#{$i} {
+      flex: 0 0 percentage(math.div($i, $grid-columns));
+      max-width: percentage(math.div($i, $grid-columns));
+    }
+  }
+
+  @for $i from 1 through $grid-columns {
+    .o-grid-col-#{$breakpoint}--offset-#{$i} {
+      margin-left: percentage(math.div($i, $grid-columns));
+    }
+  }
+}
+
+// breakpoints
+@each $breakpoint, $breakpoint-value in $breakpoints {
+  @media screen and (min-width: $breakpoint-value) {
+    @for $i from 1 through $grid-columns {
+      .o-grid-col-#{$breakpoint}-#{$i} {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1 1 percentage(math.div($i, $grid-columns));
+        max-width: percentage(math.div($i, $grid-columns));
+      }
+    }
+  }
+}
+

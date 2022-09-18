@@ -1,0 +1,50 @@
+//
+// flexbox based "grid" / stackable columns for layout
+//
+
+@import '../config/columns';
+
+.o-columns {
+  display: flex;
+}
+
+.o-columns--wrap {
+  flex-wrap: wrap;
+}
+
+.o-columns--reverse {
+  flex-direction: row-reverse;
+}
+
+.o-column {
+  flex: 1 1 auto;
+
+  @each $variant in $growShrinkVariants {
+    &--grow-#{$variant} {
+      flex-grow: $variant;
+    }
+    &--shrink-#{$variant} {
+      flex-shrink: $variant;
+    }
+  }
+}
+
+.o-column--none {
+  flex: 0 0 0;
+}
+
+.o-column--full {
+  flex: 1 1 100%;
+}
+
+.o-column--half {
+  flex: 1 1 50%;
+}
+
+.o-column--third {
+  flex: 1 1 33.333333%;
+}
+
+.o-column--quarter {
+  flex: 1 1 25%;
+}
