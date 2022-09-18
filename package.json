@@ -1,8 +1,8 @@
 {
-  "name": "basecss",
+  "name": "tocss",
   "version": "0.0.1",
-  "description": "css reset and opinionated defaults",
-  "main": "index.js",
+  "description": "css reset, opinionated defaults and some useful classes",
+  "main": "",
   "author": "Tom R Flo",
   "license": "MIT",
   "dependencies": {
