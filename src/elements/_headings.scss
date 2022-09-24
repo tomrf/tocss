@@ -1,11 +1,13 @@
 //
-// style for headings h1..h6 / $headingSizes
+// style for headings h1..h6 / $heading-sizes
 //
 
+@import '../config/base';
 @import '../config/typography';
 
-@each $heading, $size in $headingSizes {
+@each $heading, $size in $heading-sizes {
   h#{$heading} {
+    font-family: $font-family-headings;
     font-size: $size;
     font-weight: 600;
 

@@ -1,15 +1,37 @@
 // base font size (1rem)
 $rem-size: 10px !default;
 
-// body font configuration
-$font-size: 1.8rem !default;
+// font families
 $font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !default;
+$font-family-monospace: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace !default;
+$font-family-headings: $font-family !default;
+
+// font/text configuration
+$font-size: 1.8rem !default;
 $font-weight: 400 !default;
-
 $line-height: 1.5 !default;
-
-$body-color: #111 !default;
-$body-background-color: #fff !default;
-
-//$text-rendering: optimizeLegibility !default;
 $text-rendering: optimizeSpeed !default;
+
+// colors
+$black: #111 !default;
+$white: #fff !default;
+$gray: #999 !default;
+$gray-light: #eee !default;
+$gray-dark: #333 !default;
+$red: #e84225 !default;
+$green: #50cc23 !default;
+$blue: #0a68f4 !default;
+
+$link-color: $blue !default;
+$link-color-hover: darken($link-color, 15%) !default;
+
+$button-color: $gray-light !default;
+$button-color-hover: darken($button-color, 5%) !default;
+
+$body-color: $black !default;
+$body-background-color: $white !default;
+
+// borders
+$border-radius: 0.15em !default;
+$border-width: 1px !default;
+$border-color: $gray-dark !default;

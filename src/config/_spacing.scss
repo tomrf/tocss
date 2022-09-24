@@ -1,8 +1,8 @@
-$types: (
+$spacing-types: (
     m: margin,
     p: padding) !default;
 
-$sizeVariants: (
+$spacing-sizes: (
     0: 0,
     1: 0.25rem,
     2: 0.5rem,
@@ -10,7 +10,7 @@ $sizeVariants: (
     4: 1.5rem,
     5: 3rem) !default;
 
-$directions: (
+$spacing-directions: (
     a: (top right bottom left),
     t: (top),
     b: (bottom),

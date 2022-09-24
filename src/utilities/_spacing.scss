@@ -1,13 +1,13 @@
 //
 // spacing utility classes for margin and padding
-// u-{..$types}{..$directions}-{..$sizeVariants}, i.e u-mx-2, u-pt-3
+// u-{..$spacing-types}{..$spacing-directions}-{..$spacing-sizes}, i.e u-mx-2, u-pt-3
 //
 
 @import '../config/spacing';
 
-@each $t, $type in $types {
-  @each $sizeIndex, $spacingRems in $sizeVariants {
-    @each $d, $directionList in $directions {
+@each $t, $type in $spacing-types {
+  @each $sizeIndex, $spacingRems in $spacing-sizes {
+    @each $d, $directionList in $spacing-directions {
       .u-#{$t}#{$d}-#{$sizeIndex} {
         @each $direction in $directionList {
           @if $direction != '' {

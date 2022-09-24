@@ -19,7 +19,7 @@
 .o-column {
   flex: 1 1 auto;
 
-  @each $variant in $growShrinkVariants {
+  @each $variant in $columns-grow-shrink-variants {
     &--grow-#{$variant} {
       flex-grow: $variant;
     }
