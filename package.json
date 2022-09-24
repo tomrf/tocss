@@ -2,7 +2,7 @@
   "name": "tocss",
   "version": "0.0.1",
   "description": "css reset, opinionated defaults and some useful classes",
-  "main": "",
+  "main": "src/tocss.scss",
   "author": "Tom R Flo",
   "license": "MIT",
   "dependencies": {
@@ -10,9 +10,9 @@
   },
   "scripts": {
     "build": "yarn run build-expanded && yarn run build-compressed",
-    "build-compressed": "sass --no-source-map --style=compressed --update src/basecss.scss/:dist/basecss.min.css",
-    "build-expanded": "sass --no-source-map --style=expanded --update src/basecss.scss/:dist/basecss.css",
-    "build-demo": "sass --no-source-map --style=expanded --update src/basecss.scss:demo/basecss.css",
+    "build-compressed": "sass --no-source-map --style=compressed --update src/tocss.scss/:dist/tocss.min.css",
+    "build-expanded": "sass --no-source-map --style=expanded --update src/tocss.scss/:dist/tocss.css",
+    "build-demo": "sass --no-source-map --style=expanded --update src/tocss.scss:demo/tocss.css",
     "watch": "yarn run build --watch",
     "clean": "rm -rf dist/*"
   }
