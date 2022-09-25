@@ -16,7 +16,7 @@
   flex-direction: row-reverse;
 }
 
-.o-column {
+.o-columns__column {
   flex: 1 1 auto;
 
   @each $variant in $columns-grow-shrink-variants {
@@ -29,19 +29,19 @@
   }
 }
 
-.o-column--none {
+.o-columns__column--none {
   flex: 0 0 0;
 }
 
-.o-column--full {
+.o-columns__column--full {
   flex: 1 1 100%;
 }
 
-.o-column--half {
+.o-columns__column--half {
   flex: 1 1 50%;
 }
 
-.o-column--third {
+.o-columns__column--third {
   flex: 1 1 33.333333%;
 }
 

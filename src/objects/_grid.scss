@@ -11,49 +11,49 @@
   flex-wrap: wrap;
 }
 
+// default auto col
+.o-grid__col {
+  display: flex;
+  flex: 1 1 auto;
+}
+
 // dynamic grid columns
-.o-grid-col-grow {
+.o-grid__col--grow {
   flex: 1 0 0;
 }
 
-.o-grid-col-shrink {
+.o-grid__col--shrink {
   flex: 0 1 auto;
   width: auto;
 }
 
-// o-grid-col-[1..$grid-columns], + --offset-N, --order-N
+// o-grid__col-[1..$grid-columns], + --offset-N, --order-N
 @for $i from 1 through $grid-columns {
-  .o-grid-col-#{$i} {
+  .o-grid__col-#{$i} {
     display: flex;
     flex: 1 1 percentage(math.div($i, $grid-columns));
     max-width: percentage(math.div($i, $grid-columns));
   }
-}
-
-@for $i from 1 through $grid-columns {
-  .o-grid-col--offset-#{$i} {
+  .o-grid__col--offset-#{$i} {
     margin-left: percentage(math.div($i, $grid-columns));
   }
-}
-
-@for $i from 1 through $grid-columns {
-  .o-grid-col--order-#{$i} {
+  .o-grid__col--order-#{$i} {
     order: $i;
   }
 }
 
-// o-grid-col-[breakpoint]-[1..$grid-columns], + --offset-N, --order-N
+// o-grid__col-[breakpoint]-[1..$grid-columns], + --offset-N, --order-N
 @each $breakpoint, $breakpoint-value in $breakpoints {
   @for $i from 1 through $grid-columns {
-    .o-grid-col-#{$breakpoint}-#{$i} {
+    .o-grid__col-#{$breakpoint}-#{$i} {
       flex: 0 0 percentage(math.div($i, $grid-columns));
       max-width: percentage(math.div($i, $grid-columns));
     }
-  }
-
-  @for $i from 1 through $grid-columns {
-    .o-grid-col-#{$breakpoint}--offset-#{$i} {
+    .o-grid__col-#{$breakpoint}--offset-#{$i} {
       margin-left: percentage(math.div($i, $grid-columns));
+    }
+    .o-grid__col-#{$breakpoint}--order-#{$i} {
+      order: $i;
     }
   }
 }
@@ -62,7 +62,7 @@
 @each $breakpoint, $breakpoint-value in $breakpoints {
   @media screen and (min-width: $breakpoint-value) {
     @for $i from 1 through $grid-columns {
-      .o-grid-col-#{$breakpoint}-#{$i} {
+      .o-grid__col-#{$breakpoint}-#{$i} {
         display: flex;
         flex-wrap: wrap;
         flex: 1 1 percentage(math.div($i, $grid-columns));

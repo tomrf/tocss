@@ -10,10 +10,10 @@
             outline: 1px solid #00000090;
             text-align: center;
         }
-        .o-column {
+        .o-columns__column {
             outline: 1px solid red;
         }
-        .o-columns, .o-column {
+        .o-columns, .o-columns__column {
             border-radius: 5px;
             padding: 10px;
             margin: 10px;
@@ -23,39 +23,41 @@
 </head>
 <body>
     <div class="o-columns">
-        <div class="o-column">.o-column</div>
+        <div class="o-columns__column">.o-columns__column</div>
     </div>
     <div class="o-columns">
-        <div class="o-column">.o-column</div>
-        <div class="o-column">.o-column</div>
+        <div class="o-columns__column">.o-columns__column</div>
+        <div class="o-columns__column">.o-columns__column</div>
     </div>
     <div class="o-columns">
-        <div class="o-column">.o-column</div>
-        <div class="o-column">.o-column</div>
-        <div class="o-column">.o-column</div>
+        <div class="o-columns__column">.o-columns__column</div>
+        <div class="o-columns__column">.o-columns__column</div>
+        <div class="o-columns__column">.o-columns__column</div>
     </div>
     <div class="o-columns">
-        <div class="o-column o-column--grow-1">...o-column--grow-1</div>
-        <div class="o-column o-column--grow-2">...o-column--grow-2</div>
-        <div class="o-column o-column--grow-3">...o-column--grow-3</div>
+        <div class="o-columns__column o-columns__column--grow-1">...o-columns__column--grow-1</div>
+        <div class="o-columns__column o-columns__column--grow-2">...o-columns__column--grow-2</div>
+        <div class="o-columns__column o-columns__column--grow-3">...o-columns__column--grow-3</div>
 
     </div>
 
     <div class="o-columns">
-        <div class="o-column--grow-1">
+        <div class="o-columns__column--grow-1">
             ..grow-1
             <div class="o-columns">
-                <div class="o-column o-column--grow-1">...o-column--grow-1</div>
-                <div class="o-column o-column--grow-2">...o-column--grow-2</div>
+                <div class="o-columns__column o-columns__column--grow-1">...o-columns__column--grow-1</div>
+                <div class="o-columns__column o-columns__column--grow-2">...o-columns__column--grow-2</div>
+                <div class="o-columns__column o-columns__column--grow-3">...full</div>
+
             </div>
         </div>
-        <div class="o-column--grow-1">
-            ..grow-1, ...o-columns--wrap:
+        <div class="o-columns__column--grow-1">
+            ..grow-1, ...o-columns--wrap
             <div class="o-columns o-columns--wrap">
-                <div class="o-column o-column--grow-2 o-column--shrink-2">...grow-2 ...shrink-2</div>
-                <div class="o-column o-column--grow-1 o-column--shrink-1">...grow-1...shrink-2</div>
-                <div class="o-column o-column--shrink-1">...shrink-1</div>
-                <div class="o-column o-column--full">...full</div>
+                <div class="o-columns__column o-columns__column--grow-2 o-columns__column--shrink-2">...grow-2 ...shrink-2</div>
+                <div class="o-columns__column o-columns__column--grow-1 o-columns__column--shrink-1">...grow-1...shrink-2</div>
+                <div class="o-columns__column o-columns__column--shrink-1">...shrink-1</div>
+                <div class="o-columns__column o-columns__column--full">...full</div>
             </div>
         </div>
     </div>
