@@ -13,7 +13,7 @@ $line-height: 1.5 !default;
 $text-rendering: optimizeSpeed !default;
 
 // colors
-$black: #111 !default;
+$black: #222 !default;
 $white: #fff !default;
 $gray: #999 !default;
 $gray-light: #eee !default;
@@ -22,12 +22,11 @@ $red: #e84225 !default;
 $green: #50cc23 !default;
 $blue: #0a68f4 !default;
 
+// color theme
 $link-color: $blue !default;
 $link-color-hover: darken($link-color, 15%) !default;
-
 $button-color: $gray-light !default;
 $button-color-hover: darken($button-color, 5%) !default;
-
 $body-color: $black !default;
 $body-background-color: $white !default;
 

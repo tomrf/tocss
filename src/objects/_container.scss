@@ -1,0 +1,25 @@
+//
+// container used to horizontally center content on larger displays
+//
+
+@import '../config/breakpoints';
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+
+        @each $name, $value in $breakpoints {
+        @if $value != 0px {
+            // ..--max-{...$breakpoints}
+            &--max-#{$name} {
+                max-width: map-get($breakpoints, $name) !important;
+            }
+
+            // responsiveness
+            @media screen and (min-width: $value) {
+                max-width: $value;
+            }
+        }
+    }
+}

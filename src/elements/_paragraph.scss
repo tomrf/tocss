@@ -1,0 +1,9 @@
+p {
+    margin-bottom: 1em;
+}
+
+p.lead {
+    font-size: 1.25em;
+    font-weight: 300;
+    line-height: calc($line-height * 1.1);
+}
