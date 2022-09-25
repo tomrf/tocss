@@ -5,14 +5,15 @@
 @import '../config/base';
 @import '../config/typography';
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-headings;
+  font-weight: 600;
+}
+
 @each $heading, $size in $heading-sizes {
   h#{$heading} {
-    font-family: $font-family-headings;
     font-size: $size;
-    font-weight: 600;
-
     line-height: calc($size * 1.5);
-
     margin-top: calc($size * 0.25);
     margin-bottom: calc($size * 0.33);
   }
