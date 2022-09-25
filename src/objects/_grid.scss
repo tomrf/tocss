@@ -11,64 +11,52 @@
   flex-wrap: wrap;
 }
 
-// default auto col
-.o-grid__col {
+// .o-grid__col*
+[class*='o-grid__col'] {
   display: flex;
+}
+
+.o-grid__col {
   flex: 1 1 auto;
-}
 
-// dynamic grid columns
-.o-grid__col--grow {
-  flex: 1 0 0;
-}
-
-.o-grid__col--shrink {
-  flex: 0 1 auto;
-  width: auto;
-}
-
-// o-grid__col-[1..$grid-columns], + --offset-N, --order-N
-@for $i from 1 through $grid-columns {
-  .o-grid__col-#{$i} {
-    display: flex;
-    flex: 1 1 percentage(math.div($i, $grid-columns));
-    max-width: percentage(math.div($i, $grid-columns));
+  &--grow {
+    flex-grow: 1;
   }
-  .o-grid__col--offset-#{$i} {
-    margin-left: percentage(math.div($i, $grid-columns));
-  }
-  .o-grid__col--order-#{$i} {
-    order: $i;
-  }
-}
 
-// o-grid__col-[breakpoint]-[1..$grid-columns], + --offset-N, --order-N
-@each $breakpoint, $breakpoint-value in $breakpoints {
+  &--shrink {
+    flex-shrink: 1;
+  }
+
   @for $i from 1 through $grid-columns {
-    .o-grid__col-#{$breakpoint}-#{$i} {
-      flex: 0 0 percentage(math.div($i, $grid-columns));
+    &--#{$i} {
+      flex: 1 1 percentage(math.div($i, $grid-columns));
       max-width: percentage(math.div($i, $grid-columns));
     }
-    .o-grid__col-#{$breakpoint}--offset-#{$i} {
+
+    &--offset-#{$i} {
       margin-left: percentage(math.div($i, $grid-columns));
     }
-    .o-grid__col-#{$breakpoint}--order-#{$i} {
+
+    &--order-#{$i} {
       order: $i;
     }
   }
 }
 
-// breakpoints
-@each $breakpoint, $breakpoint-value in $breakpoints {
+@each $breakpoint,
+$breakpoint-value in $breakpoints {
   @media screen and (min-width: $breakpoint-value) {
     @for $i from 1 through $grid-columns {
-      .o-grid__col-#{$breakpoint}-#{$i} {
-        display: flex;
-        flex-wrap: wrap;
+      .o-grid__col--#{$breakpoint}-#{$i} {
         flex: 1 1 percentage(math.div($i, $grid-columns));
         max-width: percentage(math.div($i, $grid-columns));
+      }
+      .o-grid__col--#{$breakpoint}-offset-#{$i} {
+          margin-left: percentage(math.div($i, $grid-columns));
+      }
+      .o-grid__col--#{$breakpoint}-order-#{$i} {
+          order: $i;
       }
     }
   }
 }
-

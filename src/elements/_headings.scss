@@ -8,13 +8,11 @@
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-headings;
   font-weight: 600;
+  margin: 0.5em 0 0.5em;
 }
 
 @each $heading, $size in $heading-sizes {
   h#{$heading} {
     font-size: $size;
-    line-height: calc($size * 1.5);
-    margin-top: calc($size * 0.25);
-    margin-bottom: calc($size * 0.33);
   }
 }
