@@ -8,18 +8,17 @@
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
+    padding: 2rem;
 
-        @each $name, $value in $breakpoints {
-        @if $value != 0px {
-            // ..--max-{...$breakpoints}
-            &--max-#{$name} {
-                max-width: map-get($breakpoints, $name) !important;
-            }
+    @each $name, $value in $breakpoints {
+        // ..--max-{...$breakpoints}
+        &--max-#{$name} {
+            max-width: map-get($breakpoints, $name) !important;
+        }
 
-            // responsiveness
-            @media screen and (min-width: $value) {
-                max-width: $value;
-            }
+        // responsiveness
+        @include breakpoint($name) {
+            max-width: $value;
         }
     }
 }

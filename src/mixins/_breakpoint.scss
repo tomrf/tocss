@@ -1,0 +1,17 @@
+//
+// mixin: breakpoint
+//
+
+@import '../config/breakpoints';
+
+@mixin breakpoint($name) {
+  @if map-has-key($breakpoints, $name) {
+    @media only screen and ( min-width: #{inspect(map-get($breakpoints, $name))} ) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Breakpoint `#{$breakpoint}` not defined in `$breakpoints` map.";
+  }
+}

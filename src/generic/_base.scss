@@ -6,6 +6,7 @@
 
 html {
   font-size: $rem-size;
+  height: 100%;
 }
 
 body {
@@ -20,7 +21,7 @@ body {
   color: $body-color;
   background-color: $body-background-color;
 
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 a:not([class]) {

@@ -12,8 +12,6 @@
     "build": "yarn run build-expanded && yarn run build-compressed",
     "build-compressed": "sass --no-source-map --style=compressed --update src/tocss.scss/:dist/tocss.min.css",
     "build-expanded": "sass --no-source-map --style=expanded --update src/tocss.scss/:dist/tocss.css",
-    "build-demo": "sass --no-source-map --style=expanded --update src/tocss.scss:demo/tocss.css",
-    "xwatch": "yarn run build --watch",
     "clean": "rm -rf dist/*"
   }
 }
