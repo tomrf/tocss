@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOCSS</title>
+    <link rel="stylesheet" href="/tocss.css">
+</head>
+<body>
+    <section class="o-container">
+        <h1>TOCSS demo</h1>
+        <p>
+            Various examples of base style and styled components.
+            <ul>
+                <li><a href="/elements.html">HTML elements, raw</a></li>
+                <li><a href="/article.html">Basic article with headers and paragraphs</a></li>
+                <li><a href="/grid.html">Grid</a></li>
+                <li><a href="/columns.html">Columns</a></li>
+                <li><a href="/util-spacing.html">Spacing utilities</a></li>
+            </ul>
+        </p>
+        <h2>Class name dump</h2>
+        <div id="classes" class="u-font-family-monospace"></div>
+    </section>
+    <script>
+        const elClasses = document.getElementById('classes');
+        fetch('/tocss.css')
+            .then(response => response.text())
+            .then(css => {
+                const classes = css.match(/([\.#][_A-Za-z0-9\-]+)[^}]*{/g).map(c => c.replace(/[^A-Za-z0-9\-_]/g, ''));
+                const uniqueClasses = classes.filter((c, i) => classes.indexOf(c) === i);
+                uniqueClasses.sort();
+
+                for (const c of uniqueClasses) {
+                    const el = document.createElement('div');
+                    el.innerText = c;
+
+                    if (c.indexOf('--') > -1) {
+                        el.classList.add('u-font-size-5', 'u-pl-4', 'child');
+                    }
+
+                    elClasses.appendChild(el);
+                }
+            });
+    </script>
+</body>
+</html>
